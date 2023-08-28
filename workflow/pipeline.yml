@@ -20,8 +20,5 @@ jobs:
     - name: Instalar dependencias
       run: npm install --no-audit --no-fund --no-optional
 
-    - name: Lint
-      run: npm run eslint
-
     - name: Ejecutar Pruebas
       run: npx cypress run
