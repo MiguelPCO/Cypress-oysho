@@ -1,28 +1,24 @@
-name: Ejercutar Pruebas nocturnas
+name: Ejecutar Pruebas Nocturnas
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *' 
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - name: Checkout Repository
+    - name: Checkout del código fuente
       uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Configurar Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '14' 
 
-    - name: Install Dependencies
-      run: npm install
+    - name: Instalar dependencias
+      run: npm install --no-audit --no-fund --no-optional
 
-    - name: Run Tests
-      run: npm run test -- --watchAll=false
+    - name: Ejecutar Pruebas
+      run: npx cypress run
