@@ -25,7 +25,7 @@ Instalar dependencias.
 Para iniciar el test utiliza el siguiente comando.
 
 ```bash
-  npx cypress run
+  npm run cypress:open
 ```
 
 
