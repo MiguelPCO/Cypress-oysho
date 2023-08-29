@@ -5,6 +5,13 @@ on:
     - cron: '0 0 * * *' 
 
 jobs:       
+ avoid_reduncy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
    build:
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +30,6 @@ jobs:
         with:
           name: dist
           path: dist
-          
     test:
     needs: [lint, build]
     runs-on: ubuntu-latest
@@ -43,7 +49,6 @@ jobs:
           path: dist
       - name: Test
         run: npm test
-
   e2e:
     needs: [lint, build]
     runs-on: ubuntu-latest
