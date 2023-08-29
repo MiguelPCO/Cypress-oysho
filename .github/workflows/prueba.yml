@@ -1,0 +1,14 @@
+name: Ejemplo de Flujo de Trabajo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  imprimir-mensaje:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Imprimir un mensaje
+      run: echo "¡Hola desde GitHub Actions!"
