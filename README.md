@@ -20,5 +20,13 @@ Instalar dependencias.
    npm install 
 ```
 
+## Iniciar los test
+
+Para iniciar el test utiliza el siguiente comando.
+
+```bash
+  npx cypress run
+```
+
 
 
