@@ -14,38 +14,11 @@
 
 ## Instalacíon
 
-Crear el proyecto npm init.
-
-
-```bash
-   npm init
-```
-
-Instalar Cypress npm install cypress. 
-```bash
-   npm install cypress
-```
-
-Instalar Version 12.17.4 de Cypress con npm install -D cypress@12.17.4
+Instalar dependencias. 
 
 ```bash
-   npm install -D cypress@12.17.4
+   npm install 
 ```
 
-Añadir un script a npm "cypress:open": " cypress open " en package.json
-
-```bash
-  "scripts": {
-    "cypress:open": " cypress open "
-  }
-```
-    
-## Iniciar los test
-
-Para iniciar el test utiliza el siguiente comando.
-
-```bash
-  npx cypress run
-```
 
 
